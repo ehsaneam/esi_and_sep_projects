@@ -82,7 +82,7 @@ void esia::start()
 #ifndef QT_NO_CURSOR
     QApplication::setOverrideCursor(Qt::WaitCursor);
 #endif
-    while (!tcpServer.isListening() && !tcpServer.listen(QHostAddress("192.168.43.1") , 7778 )) {
+    while (!tcpServer.isListening() && !tcpServer.listen(QHostAddress("192.168.43.99") , 7778 )) {
         QMessageBox::StandardButton ret = QMessageBox::critical(this,
                                         tr("Loopback"),
                                         tr("Unable to start the connection: %1.")
