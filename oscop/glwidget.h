@@ -4,7 +4,7 @@
 #include "renderarea.h"
 #include <QOpenGLWidget>
 
-#define find_space 0
+#define find_hashtag 0
 #define get_first_val 1
 #define get_sec_val 2
 #define get_trd_val 3
@@ -22,7 +22,7 @@ public slots:
 protected:
     void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
 private:
-    int new_y;
+    int new_y,sending_y;
     renderarea* area;
     int state;
     bool paintState;

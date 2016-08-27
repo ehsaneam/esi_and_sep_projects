@@ -1,5 +1,5 @@
 #include "renderarea.h"
-
+#include <QDebug>
 #include <QPainter>
 #include <QPaintEvent>
 #include <QWidget>
@@ -19,13 +19,11 @@ renderarea::renderarea()
 void renderarea::paint(QPainter *painter,QPaintEvent* event , int y_new){
     y[index] = y_new;
     QRect a(index*5,event->rect().top(),5,event->rect().height());
-    painter->fillRect(a, background);
+    painter->fillRect(a,background);
     painter->save();
     painter->setPen(circlePen);
-    if(index==0)
-        painter->drawPoint(5*index, 440 - ((400*y[index])/255) );
-    else
-        painter->drawLine(5*(index-1),440 - ((400*y[index-1])/255) , 5*index , 440 - ((400*y[index])/255));
+    if(index!=0)
+        painter->drawLine(5*(index-1),440 - ((400*y[index-1])/4095) , 5*index , 440 - ((400*y[index])/4095));
     painter->restore();
     index++;
     if(index>=VECTOR_SIZE)
