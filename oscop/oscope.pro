@@ -21,7 +21,8 @@ SOURCES += main.cpp\
 HEADERS  += osil.h \
     renderarea.h \
     glwidget.h \
-    settingsdialog.h
+    settingsdialog.h \
+    oscop_data.h
 
 FORMS += \
     settingsdialog.ui
